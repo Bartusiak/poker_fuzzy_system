@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="J_FUZZY_LOGIC">
+    <CLASSES>
+      <root url="file://D:/INSTALKI/J_FUZZY_LOGIC" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://D:/INSTALKI/J_FUZZY_LOGIC" />
+    </SOURCES>
+    <jarDirectory url="file://D:/INSTALKI/J_FUZZY_LOGIC" recursive="false" />
+    <jarDirectory url="file://D:/INSTALKI/J_FUZZY_LOGIC" recursive="false" type="SOURCES" />
+  </library>
+</component>

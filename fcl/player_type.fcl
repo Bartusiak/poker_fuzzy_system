@@ -1,0 +1,53 @@
+FUNCTION_BLOCK player_type
+
+VAR_INPUT
+    vpip : REAL;
+    pfr : REAL;
+END_VAR
+
+VAR_OUTPUT
+    type : REAL;
+END_VAR
+
+FUZZIFY vpip //VPIP is percent of hands which the player put chips (not calculate BB and SB)
+    TERM very_high := (49,0) (50, 1) (100, 1); //whale
+    TERM high := (35, 0) (36, 1) (49, 1) (50, 0); //very loose
+    TERM medium := (20, 0) (21, 1) (35, 1) (36, 0); // loose
+    TERM low := (10, 0) (11, 1) (20, 1) (21, 0);  // tight
+    TERM very_low := (0, 0) (1, 1) (10, 1) (11, 0); // nit
+END_FUZZIFY
+
+FUZZIFY pfr //PFR is index of preflop raise. Tell about how many hands the player raise before show the flop.
+    TERM very_high := (29, 0) (30, 1) (100, 1);
+    TERM high := (11, 0) (12, 1) (29, 1);
+    TERM low := (5, 0) (6, 1) (11, 1);
+    TERM very_low := (0, 0) (1, 1) (5, 1);
+END_FUZZIFY
+
+DEFUZZIFY type
+    TERM whale := (0, 0) (1, 1) (2, 0);
+    TERM fish := (3, 0) (4, 1) (5, 0);
+    TERM reg := (6, 0) (7, 1) (8, 0);
+    TERM tight := (9, 0) (10, 1) (11, 0);
+    TERM nit := (12, 0) (13, 1) (14, 0);
+    TERM rock := (15, 0) (16, 1) (17, 0);
+END_DEFUZZIFY
+
+RULEBLOCK No1
+    AND : MIN;
+    ACT : MIN;
+    ACCU : MAX;
+
+    RULE 1 : IF vpip IS very_low AND pfr IS low THEN type IS nit;
+    RULE 2 : IF vpip IS medium AND pfr IS high THEN type IS reg;
+    RULE 3 : IF vpip IS very_high AND pfr IS very_low THEN type IS whale;
+    RULE 4 : IF vpip IS very_high AND pfr IS low THEN type IS whale;
+    RULE 5 : IF vpip IS high AND pfr IS very_low THEN type IS fish;
+    RULE 6 : IF vpip IS high AND pfr IS low THEN type IS fish;
+    RULE 7 : IF vpip IS low AND pfr IS low THEN type IS tight;
+    RULE 8 : IF vpip IS medium AND pfr IS very_low THEN type IS rock;
+
+
+END_RULEBLOCK
+
+END_FUNCTION_BLOCK

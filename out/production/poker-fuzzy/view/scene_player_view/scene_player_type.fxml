@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="archorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox id="inputsVBox" layoutX="-1.0" prefHeight="375.0" prefWidth="178.0" styleClass="sidebar" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TextField id="vpipField" promptText="VPIP:" styleClass="text-field">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></TextField>
+            <TextField id="pfrField" promptText="PFR:" styleClass="text-field" />
+         </children>
+      </VBox>
+      <VBox id="resultVBox" layoutX="177.0" prefHeight="400.0" prefWidth="423.0" styleClass="parent" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="177.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="204.0" prefWidth="423.0" />
+         </children></VBox>
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutY="375.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="178.0" text="CONFIRM" AnchorPane.bottomAnchor="0.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+   <stylesheets>
+      <URL value="@stylesheet.css" />
+   </stylesheets>
+</AnchorPane>
