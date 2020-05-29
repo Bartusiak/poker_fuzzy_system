@@ -34,6 +34,7 @@ public class TypePlayerReader {
             System.out.println(fis);
             System.out.println("Type: " + fis.getVariable("type").getValue());
             System.out.println("Type: " + fis.getVariable("type"));
+
         }
 
     }

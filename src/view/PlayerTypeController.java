@@ -22,7 +22,7 @@ public class PlayerTypeController implements Initializable{
 
     @FXML
     private void handleButton(javafx.event.ActionEvent actionEvent) {
-        if(vpipTextField != null && pfrTextField != null){
+        if(!vpipTextField.getText().isEmpty() && !pfrTextField.getText().isEmpty()){
             System.out.println("START");
             String fileName = "fcl/player_type.fcl";
             FIS fis = FIS.load(fileName,true);
@@ -56,9 +56,6 @@ public class PlayerTypeController implements Initializable{
                 alert.setHeaderText("Something wrong with inputs - VPIP and PFR");
                 alert.setContentText(e.getMessage());
             }
-
-
-
             System.out.println("STOP");
         }
     }
