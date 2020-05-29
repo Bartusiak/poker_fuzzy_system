@@ -1,0 +1,21 @@
+.back-pairs{
+    -fx-background-color: #cedec6;
+    -fx-text-fill: black;
+    -fx-text-alignment: CENTER;
+    -fx-font-weight: normal;
+    -fx-border-color: black;
+}
+.back-suited{
+    -fx-background-color: #ffe7b5;
+    -fx-text-fill: black;
+    -fx-text-alignment: CENTER;
+    -fx-font-weight: normal;
+    -fx-border-color: black;
+}
+.back-offsuited{
+    -fx-background-color: #e7eff7;
+    -fx-text-fill: black;
+    -fx-text-alignment: CENTER;
+    -fx-font-weight: normal;
+    -fx-border-color: black;
+}
